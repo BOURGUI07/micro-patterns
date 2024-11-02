@@ -1,0 +1,6 @@
+the frontend going to send List of ReservationItemRequest
+then as a response going to receive the ReservationResponse
+
+create the dtos, create the clients
+then create the reservation handler, car handler, room handler
+then create the reservation service
