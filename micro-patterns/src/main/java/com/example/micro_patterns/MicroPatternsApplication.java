@@ -3,7 +3,7 @@ package com.example.micro_patterns;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = "com.example.micro_patterns.sec01")
+@SpringBootApplication(scanBasePackages = "com.example.micro_patterns.sec03")
 public class MicroPatternsApplication {
 
 	public static void main(String[] args) {

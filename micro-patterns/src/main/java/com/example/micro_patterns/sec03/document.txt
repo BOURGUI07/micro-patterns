@@ -1,0 +1,13 @@
+we we'll 1st make a call to product service to get the product info
+then make 3 parallel calls to inventory, payment, and shipping services.
+if the product not found, then don't even make the 3 parallel calls
+if the user doesn't have enough balance, cancel shipping and restore inventory
+if the inventory doesn't have sufficient products, refund payment and cancel shipping
+if shipping service failed, refund payment and restore inventory
+
+build dtos, build clients, build orchestration dto, build orchestration requests(inventory, shipping, payment)
+create abstract class orchestrator
+create payment, inventory, shipping orchestrator
+create order fulfillment service
+create order cancellation service
+create Order Orchestration service
