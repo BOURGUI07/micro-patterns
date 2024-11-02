@@ -1,7 +1,7 @@
 ################# SEC 08 CIRCUIT BREAKER ######################
 resilience4j.circuitbreaker:
   instances:
-    review-service:
+    review-service: #the same name of @CircuitBreaker implemented above the method which has the problem
       slidingWindowType: COUNT_BASED
       slidingWindowSize: 4 #based on 4 request sent, he will decide the health state of the service
       minimumNumberOfCalls: 2 #consider at minimum 2 new requests before taking any decision of opening or closing
@@ -13,3 +13,13 @@ resilience4j.circuitbreaker:
         - java.util.concurrent.TimeoutException
 
 ################ SEC 09 RATE LIMITER ####################
+resilience4j.ratelimiter:
+  instances:
+    calculator-service:
+      limitRefreshPeriod: 20s #in a period of 20s
+      limitForPeriod: 5 # I want to limit 5 requests per 20s
+      timeoutDuration: 5s # if a client sends 5 request and there's still 5s left to 20s, then allow for more requests until 20s comes
+    review-service:
+      limitRefreshPeriod: 20s
+      limitForPeriod: 3
+      timeoutDuration: 0s
